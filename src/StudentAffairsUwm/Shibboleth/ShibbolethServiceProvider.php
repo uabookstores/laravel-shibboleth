@@ -28,7 +28,7 @@ class ShibbolethServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (config('jwtauth')) {
+        if (config('shibboleth.jwtauth')) {
             $this->app->register('Tymon\JWTAuth\Providers\JWTAuthServiceProvider');
             $loader = AliasLoader::getInstance();
             $loader->alias('JWTAuth', 'Tymon\JWTAuth\Facades\JWTAuth');
