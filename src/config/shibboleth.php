@@ -31,6 +31,7 @@ return [
      */
 
     'emulate_idp' => env('EMULATE_IDP', false),
+    'emulate_idp_url' => '/emulated/idp',
     'emulate_idp_users' => [
         'admin' => [
             'Shib-cn' => 'Admin User',

@@ -38,7 +38,7 @@ class ShibbolethController extends Controller
     {
         if (config('shibboleth.emulate_idp') === true) {
             $this->config = new \Shibalike\Config();
-            $this->config->idpUrl = config('app.url', '') . '/emulated/idp';
+            $this->config->idpUrl = config('shibboleth.emulate_idp_url', '/emulated/idp');
 
             $stateManager = $this->getStateManager();
 
