@@ -15,6 +15,7 @@ return [
     'idp_logout' => '/Shibboleth.sso/Logout',
     'authenticated' => '/',
 
+
     /*
     |--------------------------------------------------------------------------
     | Emulate an IdP
@@ -75,6 +76,9 @@ return [
         'email' => 'Shib-mail',
         'emplid' => 'Shib-emplId',
     ],
+
+    //Which fields should we match against for identifying users
+    'user_authentication_field' => 'email',
 
     /*
     |--------------------------------------------------------------------------
