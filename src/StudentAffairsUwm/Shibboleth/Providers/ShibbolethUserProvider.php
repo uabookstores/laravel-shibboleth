@@ -35,7 +35,10 @@ class ShibbolethUserProvider implements UserProviderInterface
      */
     public function retrieveById($identifier)
     {
-        $user = $this->retrieveByCredentials(['id' => $identifier]);
+        $class = '\\' . ltrim($this->model, '\\');
+        $user = new $class;
+
+        $user = $this->retrieveByCredentials([$user->getKeyName() => $identifier]);
         return ($user && $user->getAuthIdentifier() == $identifier) ?
             $user : null;
     }
